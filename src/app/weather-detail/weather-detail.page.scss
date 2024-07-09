@@ -1,0 +1,62 @@
+/* merged.component.css */
+ion-card {
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  ion-card-header {
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  ion-card-title {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  
+  ion-card-subtitle {
+    font-size: 1.2em;
+    color: #666;
+  }
+  
+  ion-card-content {
+    padding: 20px;
+  }
+  
+  ion-item {
+    --inner-padding-end: 0;
+  }
+  
+  ion-label h2 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.3em;
+  }
+  
+  /* forecast.component.css */
+ion-item {
+    --inner-padding-end: 0;
+  }
+  
+  ion-thumbnail {
+    --border-radius: 50%;
+    --size: 50px;
+  }
+  
+  ion-label h2 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.3em;
+  }
+  
+  ion-item-group {
+    margin-bottom: 10px;
+  }
+  
+  div[ngIf] {
+    padding: 0 16px;
+    background-color: #f9f9f9;
+    border-left: 4px solid #3880ff;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  

@@ -1,0 +1,72 @@
+<!-- src/app/home/home.page.html -->
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Weather App</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar [(ngModel)]="city" (ionBlur)="searchWeather()"></ion-searchbar>
+
+ <!-- merged.component.html -->
+<ion-card *ngIf="location && currentWeather">
+  <ion-card-header>
+    <ion-card-title>{{ location.name }}</ion-card-title>
+    <ion-card-subtitle>{{ location.region }}</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    <ion-item lines="none">
+      <ion-thumbnail slot="start">
+        <ion-img [src]="currentWeather.condition.icon"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ currentWeather.condition.text }}</h2>
+        <p>Temperature: {{ currentWeather.temp_c }} °C</p>
+        <p>Humidity: {{ currentWeather.humidity }} %</p>
+        <p>Wind Speed: {{ currentWeather.wind_kph }} m/s</p>
+      </ion-label>
+    </ion-item>
+  </ion-card-content>
+</ion-card>
+
+
+  <!-- <div *ngIf="forecast">
+    <h2>5-Day Forecast</h2>
+    <div *ngFor="let day of forecast.list">
+      <p>{{ day.dt_txt }}</p>
+      <p>{{ day.weather[0].description }}</p>
+      <p>Temperature: {{ day.main.temp }} °C</p>
+    </div>
+  </div> -->
+
+  <!-- forecast.component.html -->
+<ion-content>
+  <ion-list>
+    <ion-item-group *ngFor="let day of forecast; let i = index">
+      <ion-item button (click)="toggleDetails(i)">
+        <ion-thumbnail slot="start">
+          <ion-img [src]="day.day.condition.icon"></ion-img>
+        </ion-thumbnail>
+        <ion-label>
+          <h2>{{ day.date }}</h2>
+          <p>{{ day.day.condition.text }}</p>
+        </ion-label>
+      </ion-item>
+      <div *ngIf="expandedIndex === i">
+        <ion-item>
+          <ion-label>
+            <p>Min Temperature: {{ day.day.
+              maxtemp_c
+               }} °C</p>
+            <p>Max Temperature: {{ day.day.
+              mintemp_c
+               }} °C</p>
+          </ion-label>
+        </ion-item>
+      </div>
+    </ion-item-group>
+  </ion-list>
+</ion-content>
+
+</ion-content>
