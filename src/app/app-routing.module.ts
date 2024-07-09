@@ -11,9 +11,6 @@ const routes: Routes = [
     redirectTo: '',
     pathMatch: 'full'
   },
-  // {
-  //   path: 'weather-detail',
-  // },
 ];
 
 @NgModule({

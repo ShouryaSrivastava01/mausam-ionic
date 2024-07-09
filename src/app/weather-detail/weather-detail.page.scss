@@ -32,8 +32,7 @@ ion-card {
     margin-bottom: 5px;
     font-size: 1.3em;
   }
-  
-  /* forecast.component.css */
+
 ion-item {
     --inner-padding-end: 0;
   }
@@ -61,8 +60,8 @@ ion-item {
   }
   
   .shadow-item {
-    --box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Apply the shadow effect */
-    --border-radius: 8px; /* Optional: add border-radius for rounded corners */
-    margin-bottom: 8px; /* Optional: add spacing between items */
+    --box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px; 
+    margin-bottom: 8px; 
   }
   
