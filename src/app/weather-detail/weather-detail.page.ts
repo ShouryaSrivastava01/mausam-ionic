@@ -57,7 +57,7 @@ export class WeatherDetailPage implements OnInit {
         }
       );
     } else {
-      console.error('Geolocation is not supported by this browser.');
+      alert('Geolocation is not supported by this browser.');
     }
   }
   searchWeather() {
