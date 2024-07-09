@@ -38,6 +38,7 @@ export class WeatherDetailPage implements OnInit {
       this.currentWeather = this.weatherData.current;
       this.location = this.weatherData.location;
       this.forecast = this.weatherData.forecast.forecastday;
+      console.log(this.forecast)
     });
   }
 
@@ -73,7 +74,6 @@ export class WeatherDetailPage implements OnInit {
 
   async getCurrentLocation() {
     const coordinates = await Geolocation.getCurrentPosition();
-    console.log(coordinates);
     return coordinates;
   }
 }

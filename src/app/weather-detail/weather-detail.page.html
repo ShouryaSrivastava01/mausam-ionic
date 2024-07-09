@@ -5,7 +5,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content fullscreen="true">
   <ion-searchbar [(ngModel)]="city" (ionBlur)="searchWeather()"></ion-searchbar>
 
  <!-- merged.component.html -->
@@ -30,21 +30,10 @@
   </ion-card-content>
 </ion-card>
 
-
-  <!-- <div *ngIf="forecast">
-    <h2>5-Day Forecast</h2>
-    <div *ngFor="let day of forecast.list">
-      <p>{{ day.dt_txt }}</p>
-      <p>{{ day.weather[0].description }}</p>
-      <p>Temperature: {{ day.main.temp }} °C</p>
-    </div>
-  </div> -->
-
-  <!-- forecast.component.html -->
 <ion-content>
   <ion-list>
     <ion-item-group *ngFor="let day of forecast; let i = index">
-      <ion-item button (click)="toggleDetails(i)">
+      <ion-item button (click)="toggleDetails(i)" class="shadow-item">
         <ion-thumbnail slot="start">
           <ion-img [src]="day.day.condition.icon"></ion-img>
         </ion-thumbnail>
@@ -61,6 +50,10 @@
                }} °C</p>
             <p>Max Temperature: {{ day.day.
               mintemp_c
+               }} °C</p>
+            <p>Humidity: {{ day.day.
+              avghumidity
+
                }} °C</p>
           </ion-label>
         </ion-item>

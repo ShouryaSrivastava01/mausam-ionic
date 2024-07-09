@@ -60,3 +60,9 @@ ion-item {
     border-bottom: 1px solid #e0e0e0;
   }
   
+  .shadow-item {
+    --box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Apply the shadow effect */
+    --border-radius: 8px; /* Optional: add border-radius for rounded corners */
+    margin-bottom: 8px; /* Optional: add spacing between items */
+  }
+  
