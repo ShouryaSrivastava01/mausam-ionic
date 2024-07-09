@@ -5,7 +5,7 @@ import { environment } from "src/environments/environment";
     providedIn:'root'
 })
 export class WeatherService{
-    api=environment.weatherAPI;
+    api='a7758335f2654d30b8085504241203';
 
     constructor(private http: HttpClient){}
 
