@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WeatherService } from '../weather.service';
-import { Weather } from '../weather-data.interface';
-import { Forecast } from '../weather-data.interface';
+import { Geolocation } from '@capacitor/geolocation';
 
 @Component({
   selector: 'app-weather-detail',
@@ -46,25 +45,20 @@ export class WeatherDetailPage implements OnInit {
   toggleDetails(index: number): void {
     this.expandedIndex = this.expandedIndex === index ? null : index;
   }
-  getGeoLocation(){
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          this.getWeather(position.coords.latitude,position.coords.longitude)
-        },
-        (error) => {
-          console.error(error);
-        }
-      );
+
+ async getGeoLocation(){
+    const coord = await this.getCurrentLocation();
+    if (coord) {
+      this.getWeather(coord.coords.latitude, coord.coords.longitude);
     } else {
       alert('Geolocation is not supported by this browser.');
     }
   }
+
   searchWeather() {
     if (this.city?.length > 2) {
       localStorage.setItem('city', this.city);
-      this.getWeatherByLocationName(this.city)
-      
+      this.getWeatherByLocationName(this.city) 
     }
   }
 
@@ -74,8 +68,12 @@ export class WeatherDetailPage implements OnInit {
       this.currentWeather = this.weatherData.current;
       this.location = this.weatherData.location;
       this.forecast = this.weatherData.forecast.forecastday;
-      console.log(data)
     });
   }
 
+  async getCurrentLocation() {
+    const coordinates = await Geolocation.getCurrentPosition();
+    console.log(coordinates);
+    return coordinates;
+  }
 }
