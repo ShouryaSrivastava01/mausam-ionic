@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content fullscreen="true">
-  <ion-searchbar [(ngModel)]="city" (ionBlur)="searchWeather()"></ion-searchbar>
+  <ion-searchbar [(ngModel)]="city" (ionInput)="searchWeather()"></ion-searchbar>
 
 <ion-card *ngIf="location && currentWeather">
   <ion-card-header>
