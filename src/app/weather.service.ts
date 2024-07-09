@@ -12,7 +12,7 @@ export class WeatherService{
     fetchData(lat:any,long:any){
         
       console.log(lat,long)
-       return this.http.get(`http://api.weatherapi.com/v1/forecast.json?key=${this.api}`,
+       return this.http.get(`https://api.weatherapi.com/v1/forecast.json?key=${this.api}`,
        {
         params: {
                 q: `${lat},${long}`,
@@ -24,7 +24,7 @@ export class WeatherService{
     }
     fetchByLocation(location:any){
       
-       return this.http.get(`http://api.weatherapi.com/v1/forecast.json?key=${this.api}`,
+       return this.http.get(`https://api.weatherapi.com/v1/forecast.json?key=${this.api}`,
        {
         params: {
                 q: `${location}`,
